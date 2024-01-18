@@ -46,6 +46,10 @@ export default function List() {
     //     }, [])
     // );
 
+    // getQueryData é uma função síncrona que pode ser usada para obter os dados armazenados em cache de uma consulta existente. Se a consulta não existir, será retornada.undefined
+    
+const data = queryClient.getQueryData(queryKey)
+
     const mutation = useMutation({
         mutationFn: ({ todosId, completed }) => {
             return axios.patch(`http://192.168.0.104:8080/todos/${todosId}`, { completed }).then((response) => response.data);
