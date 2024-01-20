@@ -15,7 +15,7 @@ export default function List() {
 
     const { navigate } = useNavigation();
 
-    // Através de "useQueryClient" eu tenho acesso a funções para usar métodos de requisições como post, patch...
+    // O queryClient no React Query oferece métodos que permitem manipular o cache. Alguns dos métodos mais comuns incluem: queryClient.getQueryData: permite acessar os dados em cache para uma determinada query sem acionar uma nova busca no servidor. queryClient.setQueryData: Permite atualizar manualmente os dados em cache para uma determinada query.
     const queryClient = useQueryClient();
 
     const { data, isLoading, error, refetch } = useQuery('todos', () => {
